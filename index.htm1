@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ჩემს ნათლიას ❤️</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        min-height: 100vh;
+        font-family: Georgia, "Times New Roman", serif;
+        background:
+            radial-gradient(circle at top, #fff1f5 0%, #f8dce5 35%, #d9a7b7 100%);
+        color: #5a2638;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        overflow-x: hidden;
+    }
+
+    .hearts {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    .heart {
+        position: absolute;
+        bottom: -50px;
+        font-size: 25px;
+        animation: float 8s linear infinite;
+        opacity: 0.7;
+    }
+
+    .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .heart:nth-child(2) { left: 30%; animation-delay: 2s; }
+    .heart:nth-child(3) { left: 55%; animation-delay: 4s; }
+    .heart:nth-child(4) { left: 75%; animation-delay: 1s; }
+    .heart:nth-child(5) { left: 90%; animation-delay: 3s; }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 0;
+        }
+        20% {
+            opacity: 0.8;
+        }
+        100% {
+            transform: translateY(-110vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    .card {
+        width: 100%;
+        max-width: 700px;
+        background: rgba(255,255,255,0.82);
+        backdrop-filter: blur(12px);
+        border-radius: 30px;
+        padding: 45px 30px;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(90,38,56,0.25);
+        border: 1px solid rgba(255,255,255,0.8);
+        animation: appear 1.2s ease;
+    }
+
+    @keyframes appear {
+        from {
+            opacity: 0;
+            transform: translateY(30px) scale(0.96);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    .small {
+        font-size: 17px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        opacity: 0.75;
+    }
+
+    h1 {
+        font-size: clamp(38px, 8vw, 70px);
+        margin-bottom: 20px;
+        color: #8e3d5a;
+    }
+
+    .divider {
+        width: 90px;
+        height: 3px;
+        background: #b85c78;
+        margin: 20px auto 30px;
+        border-radius: 10px;
+    }
+
+    .message {
+        font-size: 21px;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+
+    .message strong {
+        color: #9d3f60;
+    }
+
+    .video-box {
+        margin: 30px auto;
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: 0 12px 35px rgba(90,38,56,0.2);
+        background: #ead1d9;
+    }
+
+    video {
+        display: block;
+        width: 100%;
+        max-height: 450px;
+        background: #ead1d9;
+    }
+
+    .note {
+        margin-top: 30px;
+        font-size: 18px;
+        line-height: 1.7;
+        font-style: italic;
+    }
+
+    .heart-big {
+        font-size: 45px;
+        margin-top: 25px;
+        animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.15);
+        }
+    }
+
+    .signature {
+        margin-top: 20px;
+        font-size: 19px;
+    }
+
+    @media (max-width: 600px) {
+        body {
+            padding: 15px;
+        }
+
+        .card {
+            padding: 35px 20px;
+            border-radius: 25px;
+        }
+
+        .message {
+            font-size: 18px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="hearts">
+    <div class="heart">❤️</div>
+    <div class="heart">💕</div>
+    <div class="heart">💗</div>
+    <div class="heart">❤️</div>
+    <div class="heart">💕</div>
+</div>
+
+<div class="card">
+
+    <div class="small">განსაკუთრებული ადამიანისთვის</div>
+
+    <h1>ჩემს ნათლიას ❤️</h1>
+
+    <div class="divider"></div>
+
+    <div class="message">
+        მინდა იცოდე, რომ ჩემს ცხოვრებაში შენი ადგილი
+        <strong>განსაკუთრებულია.</strong>
+        <br><br>
+        მადლობა ყველა იმ სითბოსთვის, სიყვარულისთვის და
+        ყურადღებისთვის, რასაც ყოველთვის მაძლევ.
+        <br><br>
+        მინდა ყოველთვის ბედნიერი, ჯანმრთელი და გაღიმებული იყო.
+        შენი ყოველი დღე სავსე იყოს სიყვარულითა და ლამაზი მომენტებით. ❤️
+    </div>
+
+    <div class="video-box">
+        <video controls playsinline>
+            <source src="video.mp4" type="video/mp4">
+            შენი ბრაუზერი ვიდეოს ვერ აჩვენებს.
+        </video>
+    </div>
+
+    <div class="note">
+        „ზოგი ადამიანი უბრალოდ ჩვენი ცხოვრების ნაწილია,
+        ზოგი კი — ჩვენი გულის ნაწილი.“ ❤️
+    </div>
+
+    <div class="heart-big">❤️</div>
+
+    <div class="signature">
+        სიყვარულით 💕
+    </div>
+
+</div>
+
+</body>
+</html>
