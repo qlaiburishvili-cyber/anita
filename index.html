@@ -1,2 +1,324 @@
-<!doctype html>
-<html lang="ka"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Invitation</title><style>*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#ead9cc}.slider{position:relative;width:100%;height:100%}.slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .9s ease,transform 4.2s ease}.slide.active{opacity:1;transform:scale(1)}.tap{position:absolute;inset:0;z-index:2}.dots{position:absolute;z-index:3;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:7px}.dot{width:6px;height:6px;border-radius:9px;background:#ffffff99}.dot.active{width:18px;background:#fff}</style></head><body><div class="slider"><img class="slide active" src="slide1.jpg"><img class="slide" src="slide2.jpg"><img class="slide" src="slide3.jpg"><img class="slide" src="slide4.jpg"><img class="slide" src="slide5.jpg"><img class="slide" src="slide6.jpg"><img class="slide" src="slide7.jpg"><img class="slide" src="slide8.jpg"><img class="slide" src="slide9.jpg"><img class="slide" src="slide10.jpg"><div class="tap" id="tap"></div><div class="dots" id="dots"></div></div><script>const s=[...document.querySelectorAll('.slide')],d=document.getElementById('dots');let i=0,t;for(let n=0;n<s.length;n++){let x=document.createElement('span');x.className='dot'+(n?'':' active');x.onclick=e=>{e.stopPropagation();show(n)};d.append(x)}function show(n){i=(n+s.length)%s.length;s.forEach((x,k)=>x.classList.toggle('active',k===i));[...d.children].forEach((x,k)=>x.classList.toggle('active',k===i));clearInterval(t);t=setInterval(()=>show(i+1),4200)}document.getElementById('tap').onclick=()=>show(i+1);t=setInterval(()=>show(i+1),4200);</script></body></html>
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ჩვენი განსაკუთრებული დღე 🤍</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #f4eee8;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.slideshow {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: #f4eee8;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.04);
+    transition:
+        opacity 0.8s ease,
+        transform 1.2s ease,
+        visibility 0.8s;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* მსუბუქი ფენა ფოტოზე */
+.slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.05),
+        rgba(255,255,255,0.12)
+    );
+    pointer-events: none;
+}
+
+/* ქვედა პატარა ინდიკატორები */
+.dots {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 7px;
+    z-index: 20;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.55);
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 20px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.95);
+}
+
+/* მარცხენა და მარჯვენა გადასასვლელი ზონები */
+.prev,
+.next {
+    position: absolute;
+    top: 0;
+    width: 35%;
+    height: 100%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* პატარა ისარი */
+.arrow {
+    position: absolute;
+    bottom: 30px;
+    z-index: 21;
+    color: rgba(255,255,255,0.9);
+    font-size: 25px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    pointer-events: none;
+}
+
+.arrow.left {
+    left: 25px;
+}
+
+.arrow.right {
+    right: 25px;
+}
+
+/* მობილურზე ფოტო მთლიანად */
+@media (max-width: 600px) {
+    .slide img {
+        object-fit: cover;
+    }
+
+    .dots {
+        bottom: 22px;
+    }
+
+    .arrow {
+        bottom: 22px;
+        font-size: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="slideshow">
+
+    <div class="slide active">
+        <img src="slide1.jpg" alt="">
+    </div>
+
+    <div class="slide">
+        <img src="slide2.jpg" alt="">
+    </div>
+
+    <div class="slide">
+        <img src="slide3.jpg" alt="">
+    </div>
+
+    <div class="slide">
+        <img src="slide4.jpg" alt="">
+    </div>
+
+    <div class="slide">
+        <img src="slide5.jpg" alt="">
+    </div>
+
+    <div class="slide">
+        <img src="slide6.jpg" alt="">
+    </div>
+
+    <div class="slide">
+        <img src="slide7.jpg" alt="">
+    </div>
+
+    <div class="slide">
+        <img src="slide8.jpg" alt="">
+    </div>
+
+    <div class="slide">
+        <img src="slide9.jpg" alt="">
+    </div>
+
+    <div class="slide">
+        <img src="slide10.jpg" alt="">
+    </div>
+
+    <div class="prev" onclick="previousSlide()"></div>
+    <div class="next" onclick="nextSlide()"></div>
+
+    <div class="arrow left">‹</div>
+    <div class="arrow right">›</div>
+
+    <div class="dots" id="dots"></div>
+
+</div>
+
+<script>
+
+const slides = document.querySelectorAll(".slide");
+const dotsContainer = document.getElementById("dots");
+
+let currentSlide = 0;
+let timer;
+
+/* წერტილების შექმნა */
+slides.forEach((slide, index) => {
+
+    const dot = document.createElement("div");
+
+    dot.classList.add("dot");
+
+    if (index === 0) {
+        dot.classList.add("active");
+    }
+
+    dot.addEventListener("click", () => {
+        showSlide(index);
+        restartTimer();
+    });
+
+    dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll(".dot");
+
+/* სლაიდის ჩვენება */
+function showSlide(index) {
+
+    slides[currentSlide].classList.remove("active");
+    dots[currentSlide].classList.remove("active");
+
+    currentSlide = (index + slides.length) % slides.length;
+
+    slides[currentSlide].classList.add("active");
+    dots[currentSlide].classList.add("active");
+}
+
+/* შემდეგი */
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+/* წინა */
+function previousSlide() {
+    showSlide(currentSlide - 1);
+}
+
+/* ავტომატური გადასვლა */
+function startTimer() {
+
+    timer = setInterval(() => {
+        nextSlide();
+    }, 4500);
+
+}
+
+function restartTimer() {
+
+    clearInterval(timer);
+
+    startTimer();
+
+}
+
+/* ტელეფონზე swipe */
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener("touchstart", function(e) {
+
+    touchStartX = e.changedTouches[0].screenX;
+
+});
+
+document.addEventListener("touchend", function(e) {
+
+    touchEndX = e.changedTouches[0].screenX;
+
+    if (touchEndX < touchStartX - 50) {
+        nextSlide();
+        restartTimer();
+    }
+
+    if (touchEndX > touchStartX + 50) {
+        previousSlide();
+        restartTimer();
+    }
+
+});
+
+/* კლავიატურითაც იმუშავებს */
+document.addEventListener("keydown", function(e) {
+
+    if (e.key === "ArrowRight") {
+        nextSlide();
+        restartTimer();
+    }
+
+    if (e.key === "ArrowLeft") {
+        previousSlide();
+        restartTimer();
+    }
+
+});
+
+startTimer();
+
+</script>
+
+</body>
+</html>
